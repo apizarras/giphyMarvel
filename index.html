@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="Stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/css/giphy.css">
+    <title>Marvel Giph App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Marvel Giffs</h1>
+        </div>
+
+        <div class="row">
+            <!-- //buttons will go here -->
+            <div id="buttons"></div>
+        </div>
+
+        <div class="row"> 
+            <div class="col-6">
+                            <!-- //giffs to appear here -->
+                <div id="rating">1</div>
+                <div id="giff-view">1</div>
+            </div>
+
+            <div class"col-6">
+                <form class=id="giff-form">
+                    <label for="giphy-input">Add a Marvel character</label>
+                    <br>
+                    <input type="text" id="giphy-input">
+                    <br>
+                    <!-- //clicking this button will add new marvel character -->
+                    <input id="add-giff" type="submit" value="Add a Marvel Character">
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./assets/javascript/app.js"></script>
+</body>
+</html>
