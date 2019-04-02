@@ -10,9 +10,10 @@
     <title>Marvel Giph App</title>
 </head>
 <body>
+
     <div class="container">
         <div class="row">
-            <h1>Marvel Giffs</h1>
+            <h1 class="col-6">Marvel Giffs</h1>
         </div>
 
         <div class="row">
@@ -21,23 +22,24 @@
         </div>
 
         <div class="row"> 
-            <div class="col-6">
+            <div class="col-9">
                 <!-- //giffs to appear here -->
                 <div id="giff-view"></div>
             </div>
 
-            <div class"col-6">
+            <div class"col-3">
                 <form class=id="giff-form">
-                    <label for="giphy-input">Add a Marvel character</label>
+                    <label class="font" for="giphy-input">Add a Marvel character</label>
                     <br>
-                    <input type="text" id="giphy-input">
+                    <input type="text" class="mt-1" id="giphy-input">
                     <br>
                     <!-- //clicking this button will add new marvel character -->
-                    <input id="add-giff" type="submit" value="Add a Marvel Character">
+                    <input id="add-giff" type="submit" value="Add a Marvel Character" class="button">
                 </form>
             </div>
         </div>
     </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./javascript/app.js"></script>

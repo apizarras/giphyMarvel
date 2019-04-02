@@ -21,10 +21,12 @@ $(document).ready(function() {
             var giffDiv = $("<div>");
             var rating = results[i].rating;
             var ratingDiv = $("<p>").text("Rating: " + rating);
+            ratingDiv.addClass("float-left")
             console.log("rating: " + results[i].rating);
             var imgURL = results[i].images.url;
             var image = $("<img>").attr("src", results[i].images.fixed_height_small_still.url);
             image.addClass("giff");
+            image.addClass("float-left");
             image.attr("data-state", "still");
             image.attr("data-still", results[i].images.fixed_height_small_still.url);
             image.attr("data-animate", results[i].images.fixed_height_small.url);
@@ -41,7 +43,7 @@ $(document).ready(function() {
         for (var j=0; j < queries.length; j++) {
             console.log(queries)
             var button = $("<button>");
-            button.addClass("giff-btn");
+            button.addClass("giff-btn button");
             button.attr("data-name", queries[j]);
             button.text(queries[j]);
             const button2 = $("<button>").addClass("giff-btn").attr("data-name", queries[j]).text(queries[j]);
