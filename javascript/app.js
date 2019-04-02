@@ -25,11 +25,10 @@ $(document).ready(function() {
             var imgURL = results[i].images.url;
             var image = $("<img>").attr("src", results[i].images.fixed_height_small_still.url);
             image.addClass("giff");
-            // image.attr("data-state", "still");
-            // var x = getAttribute("data-state");
-            // console.log(x);
+            image.attr("data-state", "still");
             image.attr("data-still", results[i].images.fixed_height_small_still.url);
             image.attr("data-animate", results[i].images.fixed_height_small.url);
+            
             console.log(results[i].embed_url);
             giffDiv.append(ratingDiv);
             giffDiv.append(image);
@@ -74,7 +73,5 @@ $(document).on("click", ".giff", function() {
     }
 })
 
-    //this closes the displayGiffs function
-    // }
 //this is the closing for document.ready
 });
