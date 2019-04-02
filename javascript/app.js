@@ -3,13 +3,13 @@ $(document).ready(function() {
     var giffs = [];
 
     function displayGiffs() {
-        $("#giff-view").empty();
-        var giphyInput = $("#giphy-input").val().trim();
+      $("#giff-view").empty();
+        // var giphyInput = $("#giphy-input").val().trim();
         console.log("clicked to display giffs");
-        console.log(giphyInput);
+        // console.log(giphyInput);
         var giff = $(this).attr("data-name");
         
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=qPURq4UwMeTT2SyFSwN89J5I43gwQHGF&q=" + giphyInput + "&limit=2&offset=0&rating=G&lang=en"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=qPURq4UwMeTT2SyFSwN89J5I43gwQHGF&q=" + giff + "&limit=2&offset=0&rating=G&lang=en"
         //setup ajax call
         $.ajax( {
             url: queryURL,
@@ -22,7 +22,7 @@ $(document).ready(function() {
             var rating = results[i].rating;
             var ratingDiv = $("<p>").text("Rating: " + rating);
             // giffDiv.append(rating);
-            console.log(results[i].rating);
+            console.log("rating: " + results[i].rating);
             var imgURL = results[i].images.url;
             var image = $("<img>").attr("src", results[i].images.fixed_height.url);
             console.log(results[i].embed_url);
@@ -35,12 +35,14 @@ $(document).ready(function() {
     function displayButtons() {
         $("#buttons").empty();
         for (var j=0; j < giffs.length; j++) {
-            var a = $("<button>");
-            a.addClass("giff-btn");
-            a.attr("data-name", giffs[j]);
-            a.text(giffs[j]);
+            console.log(giffs)
+            var button = $("<button>");
+            button.addClass("giff-btn");
+            button.attr("data-name", giffs[j]);
+            button.text(giffs[j]);
             const button2 = $("<button>").addClass("giff-btn").attr("data-name", giffs[j]).text(giffs[j]);
-            $("#buttons").append(a);
+            console.log(giffs[j]);
+            $("#buttons").append(button);
         }
     }
 
