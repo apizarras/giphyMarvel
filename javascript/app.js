@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var giffs = [];
+    var queries = [];
 
     function displayGiffs() {
       $("#giff-view").empty();
@@ -9,7 +9,7 @@ $(document).ready(function() {
         // console.log(giphyInput);
         var giff = $(this).attr("data-name");
         
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=qPURq4UwMeTT2SyFSwN89J5I43gwQHGF&q=" + giff + "&limit=2&offset=0&rating=G&lang=en"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=qPURq4UwMeTT2SyFSwN89J5I43gwQHGF&q=" + giff + "&limit=8&offset=0&rating=G&lang=en"
         //setup ajax call
         $.ajax( {
             url: queryURL,
@@ -38,14 +38,14 @@ $(document).ready(function() {
     }
     function displayButtons() {
         $("#buttons").empty();
-        for (var j=0; j < giffs.length; j++) {
-            console.log(giffs)
+        for (var j=0; j < queries.length; j++) {
+            console.log(queries)
             var button = $("<button>");
             button.addClass("giff-btn");
-            button.attr("data-name", giffs[j]);
-            button.text(giffs[j]);
-            const button2 = $("<button>").addClass("giff-btn").attr("data-name", giffs[j]).text(giffs[j]);
-            console.log(giffs[j]);
+            button.attr("data-name", queries[j]);
+            button.text(queries[j]);
+            const button2 = $("<button>").addClass("giff-btn").attr("data-name", queries[j]).text(queries[j]);
+            console.log(queries[j]);
             $("#buttons").append(button);
         }
     }
@@ -53,7 +53,7 @@ $(document).ready(function() {
     $("#add-giff").on("click", function(event) {
         event.preventDefault();
         var giff = $("#giphy-input").val().trim();
-        giffs.push(giff);
+        queries.push(giff);
         console.log(giff);
         displayButtons();
         // displayGiffs();
