@@ -18,13 +18,18 @@ $(document).ready(function() {
             var results = response.data;
             for(var i=0; i <results.length; i++) {
             console.log(results[i]);
-            var giffDiv = $("<div class='giff'>");
+            var giffDiv = $("<div>");
             var rating = results[i].rating;
             var ratingDiv = $("<p>").text("Rating: " + rating);
-            // giffDiv.append(rating);
             console.log("rating: " + results[i].rating);
             var imgURL = results[i].images.url;
-            var image = $("<img>").attr("src", results[i].images.fixed_height.url);
+            var image = $("<img>").attr("src", results[i].images.fixed_height_small_still.url);
+            image.addClass("giff");
+            // image.attr("data-state", "still");
+            // var x = getAttribute("data-state");
+            // console.log(x);
+            image.attr("data-still", results[i].images.fixed_height_small_still.url);
+            image.attr("data-animate", results[i].images.fixed_height_small.url);
             console.log(results[i].embed_url);
             giffDiv.append(ratingDiv);
             giffDiv.append(image);
@@ -57,7 +62,17 @@ $(document).ready(function() {
 
 $(document).on("click", ".giff-btn", displayGiffs);
 
-
+$(document).on("click", ".giff", function() {
+    var state = $(this).attr("data-state");
+    console.log("giff has been clicked");
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
+})
 
     //this closes the displayGiffs function
     // }
