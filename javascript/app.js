@@ -21,7 +21,6 @@ $(document).ready(function() {
             var giffDiv = $("<div>");
             var rating = results[i].rating;
             var ratingDiv = $("<p>").text("Rating: " + rating);
-            // ratingDiv.addClass("float-left")
             console.log("rating: " + results[i].rating);
             var imgURL = results[i].images.url;
             var image = $("<img>").attr("src", results[i].images.fixed_height_small_still.url);

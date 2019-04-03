@@ -1,1 +1,1 @@
-# giphyMarvel
+This allows you to search for giffs based on a keyword search. Clicking to search for your keyword will generate a button. This new button will be named according to the search word you used and can be clicked on to display several giffs from Giphy. Click on an image to see the animated version, and click again to stop the animation.
